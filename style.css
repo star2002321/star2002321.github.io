@@ -1,0 +1,303 @@
+* {
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    background-color: #575757;
+}
+
+/*可緩慢的回到頁首，必須寫在html上*/
+html{
+    scroll-behavior: smooth;
+}
+
+/*目錄設定 開始*/
+header a{
+    /*text-decoration=文字裝飾線=文字的底線*/
+    text-decoration: none;
+    /*color:inherit=將文字格式刪除*/
+    color: inherit;
+    color: rgb(0, 0, 0);
+    font-size: 18px;
+    /*行高*/
+    line-height: 35px;
+    /*調整文字之間的位置*/
+    padding-left: 40px;
+    
+}
+
+header{
+    width: 100%;
+    height: 20vh;
+    padding-left: 10vb;
+    padding-right: 10vb;
+    background-color: rgb(255, 255, 255);
+    /*sticky黏著定位，固定在最上方，並且將下方內文擠到下面，不會擋住*/
+    position: sticky;
+    top: 0;
+    /*確保會在最前面的圖層*/
+    z-index: 9999;
+    /*背景製作陰影*/
+    box-shadow:  5px 5px 6px rgba(0, 0, 0, 0.6);
+    /*將所有物件放置同一水平*/
+    display: flex;
+    /*水平對齊*/
+    justify-content: space-between;
+    /*垂直對齊*/
+    align-items: center;
+}
+
+.menu{
+    width: 100%;
+    /*文字對齊*/
+    text-align: right;
+    /*調整位置*/
+    padding-right: 8vw;
+    padding-top: 7vh;
+    
+}
+
+.logo img{
+    width: 80px;
+
+}
+
+.member img{
+    height: 40px;
+    margin-right: 50px;
+}
+/*目錄設定 結束*/
+
+/*標題 開始*/
+.title {
+    /* 文字對齊 */
+    text-align: center;
+    /* 位置設定 */
+    padding-top: 100px;
+}
+
+h1 {
+    font-size: 55px;
+    font-weight: 900;
+    color: #F40027;
+    position: relative; /* 相對定位，以便應用絕對定位的裝飾線 */
+}
+
+h1::after {
+    content: "";
+    position: absolute;
+    left: 50%; /* 使裝飾線相對於父元素水平居中 */
+    bottom: -8px;
+    transform: translateX(-50%); /* 使裝飾線水平居中 */
+    width: 500px;
+    border-bottom: 4px solid #F40027; /* 創建底線 */
+}
+/*標題 結束*/
+
+/*所有小卡設定 開始*/
+    /*橫向排列*/
+  .all-card{
+    display: flex;
+    /*調整小卡之間的距離*/
+    gap: 20px;
+    /*自動置中，上下置中 左右置中*/
+    margin: 0 auto;
+    width: 900px;
+    padding: 0px;
+
+    margin-top: 60px;
+    /*contain無限延伸塞入，cover自動塞入到等寬*/
+    background-size: cover;
+  }
+  /*小卡設定*/
+  /*card最外框，card-img以%設定，可減少調整card時，便還需要再次調整的困擾*/
+  .card{
+    width: 326px;
+    overflow: hidden;
+    
+    /* 消除小卡外框和圓角 */
+    border: none; /* 或者 border: 0; */
+    border-radius: 0; /* 消除圓角 */
+  }
+
+  .card-image{
+    width: 100%;
+    height: 180px;
+    background-size: cover;
+  }
+
+  .card-intro{
+    padding: 20px 20px;
+    background-color: rgb(255, 255, 255);
+
+    
+  }
+  h2{
+    /*調整文字設定*/
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 100%;
+  }
+  p{
+    /*調整文字設定*/
+    font-size: 12px;
+    font-weight: 900;
+    line-height: 120%;
+    
+    width: 150px;
+  }
+  h3{
+    /*調整文字設定*/
+    font-size: 28px;
+    font-weight: 900;
+    /*調整位置*/
+    text-align: right;
+    margin-top: -50px;
+  }
+
+  /*小卡照片*/
+  .taco .card-image{
+    background-image: url(img/card-taco.png);
+  }
+
+  /*小卡照片*/
+  .chicken .card-image{
+    background-image: url(img/card-chicken.png);
+  }
+
+  /*小卡照片*/
+  .eggtart .card-image{
+    background-image: url(img/card-eggtart.png);
+  }
+/*所有小卡設定 結束*/
+
+/*新品推薦*/
+.new.n1 {
+    width: 1178.13px;
+    height: 499px;
+    background-color: #BA001E;
+    margin-left: auto; /* 将 .new 向右对齐 */
+    display: flex; /* 使用 flex 布局 */
+    justify-content: flex-end; /* 将内部内容向右对齐 */
+
+    margin-top: 60px;
+}
+
+.n1.introduce-img {
+    width: 100%;
+    height: 499px;
+    overflow: hidden; /* 保证图片不溢出 */
+}
+
+.n1.introduce-img::before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1; /* 将伪元素放在 .n1.introduce-img 后面 */
+}
+.introduce{
+    margin-top: 50px;
+    margin-right: 25px;
+    margin-left: 25px;
+
+    width: 230px;
+}
+.introduce h8{
+    color: #F40027;
+    font-size: 25px;
+    font-weight: 900;
+
+    /*向右對齊*/
+    margin-left: auto; /* 将 .new 向右对齐 */
+    display: flex; /* 使用 flex 布局 */
+    justify-content: flex-end; /* 将内部内容向右对齐 */
+}
+
+h5,h6,h7{
+    color: #ffffff;
+
+    margin-bottom: 40px;
+}
+h5 {
+    font-size: 32px;
+    font-weight: 900;
+
+    padding-top: 20px;
+}
+
+h6{
+    font-size: 25px;
+    font-weight: 700;
+}
+h7{
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.circle{
+    width: 60px;
+    height: 60px;
+    background-color: #575757;
+    /*圓角設定*/
+    border-radius: 50%;
+
+    margin-top: 15px;
+    margin-left: 160px;
+    z-index: -1;
+}
+
+.n2{
+    width: 1178.13px;
+    height: 499px;
+    background-color: #BA001E;
+    margin-right: auto; /* 将 .new 向右对齐 */
+    display: flex; /* 使用 flex 布局 */
+    justify-content: flex-start; /* 将内部内容向右对齐 */
+
+    margin-top: 60px;
+}
+.n2.circle{
+    width: 60px;
+    height: 60px;
+    background-color: #575757;
+    /*圓角設定*/
+    border-radius: 50%;
+
+    margin-top: 47px;
+    margin-left: 160px;
+    z-index: -1;
+}
+/*新品推薦 結束*/
+
+
+/*中心模式滾輪 開始*/
+.center{
+    display: flex;
+    /*調整小卡之間的距離*/
+    gap: 20px;
+    /*自動置中，上下置中 左右置中*/
+    margin: 0 auto;
+    width: 1280px;
+    padding: 0px;
+
+    margin-top: 60px;
+    /*contain無限延伸塞入，cover自動塞入到等寬*/
+    background-size: cover;
+}
+
+/*中心模式滾輪 結束*/
+
+/*footer*/
+.footer img{
+    width: 100%;
+
+    margin-top: 150px;
+}
+
